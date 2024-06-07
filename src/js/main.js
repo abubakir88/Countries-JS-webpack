@@ -1,13 +1,14 @@
 import "../css/main.css";
 
 import request from "./request";
+import { createCountries } from "./update";
 
 const API = "https://restcountries.com/v3.1/all";
 
 request(API)
   .then((data) => {
-    console.log(data);
+    createCountries(data);
   })
   .catch((err) => {
-    console.log(err);
+    alert(err.massage);
   });
